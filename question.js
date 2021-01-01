@@ -5,13 +5,12 @@ class Question {
     }
     show() {
         // text(this.questionLine[0],66,66)
-        textSize(windowWidth*0.07);
+        textSize(windowWidth*0.05);
         fill(255);
         this.questionLine.forEach(element => {
         });
-        this.questionLine.forEach(function calback(element, index, array) {
-            text(element,windowWidth*0.25,windowHeight*0.4+index*100)
-            /* çalışan kodlar buraya */
+        this.questionLine.forEach(function gerigel(element, index) {
+            text(element,windowWidth*0.17,windowHeight*0.4+index*120)
 
         });
     }
