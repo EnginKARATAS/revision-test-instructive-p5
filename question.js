@@ -1,17 +1,16 @@
 class Question {
-    constructor(questionLine, answer) {
+    constructor(questionLine, baloons,locations,baloonsLenght) {
+
         this.questionLine = questionLine;
-        this.answer = answer;
+        this.baloons = baloons;
+        this.locations = locations;
+        this.baloonsLenght = baloonsLenght;
     }
     show() {
-        // text(this.questionLine[0],66,66)
-        textSize(windowWidth*0.05);
-        fill(255);
-        this.questionLine.forEach(element => {
-        });
-        this.questionLine.forEach(function gerigel(element, index) {
-            text(element,windowWidth*0.17,windowHeight*0.4+index*120)
-
-        });
+        console.log(this.baloonsLenght);
+        for (let a = 0; a < this.baloonsLenght; a++) {
+            fill(255)
+            text(this.baloons[a],50+a*100,50)            
+        }
     }
 }
