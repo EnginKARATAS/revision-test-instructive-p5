@@ -12,13 +12,6 @@ function setup() {
   questionPool = [["What time ___ ?"],["this __ question 2"]]
   locationPool = [[250,550,850],[100,100,100]]
   
-
-  //BALOONS INIİALİZE
-  for (let a = 0; a < baloonPool.length; a++) {//kaç soru var
-    for (let b = 0; b < baloonPool[a].length; b++) {//o soruda kaç soru?
-      baloons.push(new Baloon(b*100+100,100,50,baloonPool[a][b]))
-    }
-  }
   //QUESTİONS INITALİZE
   for (let i = 0; i < questionPool.length;i++) {
     questions.push(new Question(questionPool[i],baloonPool[i],locationPool,baloonPool[i].length));
