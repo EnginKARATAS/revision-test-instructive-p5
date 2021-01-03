@@ -8,9 +8,10 @@ class Question {
     }
     show() {
         console.log(this.baloonsLenght);
-        for (let a = 0; a < this.baloonsLenght; a++) {
+        for (let a = 0; a < this.baloonsLenght; a++) {//sorunun balonları
             fill(255)
-            text(this.baloons[a],50+a*100,50)            
+            text(this.baloons[a],this.locations[0][a],this.locations[1][a])            
+
         }
     }
 }
