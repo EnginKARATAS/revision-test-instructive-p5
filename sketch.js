@@ -9,25 +9,29 @@ let numberOfQuestion = 2;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   baloonPool = [["he/is","she/it","they"],["xx","yy","zz","dd"]]
-  questionPool = ["What time ___ ?"],["this __ question 2"]
+  questionPool = [["What time ___ ?"],["this __ question 2"]]
 
 
   //BALOONS INIİALİZE
   for (let a = 0; a < baloonPool.length; a++) {//kaç soru var
     for (let b = 0; b < baloonPool[a].length; b++) {//o soruda kaç soru?
-      console.log(b);
       baloons.push(new Baloon(b*100+100,100,50,baloonPool[a][b]))
     }
   }
 
-
   //QUESTİONS INITALİZE
-  for (let i = 0; i < questionPool.length; i++) {
-    for (let j = 0; i < baloons.length; j++) {
-    questions.push(new Question(questionPool[i],baloonPool[j] ));
+  for (let i = 0; i < questionPool.length;i) {
+    for (let j = 0; j < baloonPool.length; j++) {
+      console.log(i + "i ve j"+j);
+    questions.push(new Question(questionPool[i],baloonPool[j]));
     }
   }
-  console.log("sa");
+  console.log("balon sayıiıs");
+console.log(baloonPool);
+
+ console.log(questions[0]);
+ console.log(questions[1]);
+ console.log(questions[2]);
 }
 
 function draw() {
