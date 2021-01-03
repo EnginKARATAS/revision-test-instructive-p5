@@ -23,7 +23,6 @@ class Question {
         }
     }
     update() {
-        console.log(this.trueBaloons);
 
         let ang1 = radians(angle1) * 0.4;//velocty
         let y1 = height / 2 + scalar * sin(ang1);
@@ -37,10 +36,17 @@ class Question {
     }
     clicked() {
         for (let y = this.baloonsLenght; y >=0 ; y--) {//sorunun balonları
+
             this.r = 50;
             let d = dist(mouseX, mouseY, this.locations[0][y], this.locations[1][y]);
-            if (d < this.r) {
-             this.locations[1][y] = -100
+            if (d < this.r) { 
+                if (this.trueBaloons[questionCounter][y]==1) {
+                    questionCounter++;
+                    score++;
+                }
+                else
+                    score--;
+
             }
         }
     }
