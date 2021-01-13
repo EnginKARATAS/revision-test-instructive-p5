@@ -7,6 +7,7 @@ class Question {
         this.trueBaloons = trueBaloons;
         this.baloonsLenght = baloonsLenght;
         this.sin = 0;
+        this.container = true
     }
     show() {
         for (let a = 0; a < this.baloonsLenght; a++) {//sorunun balonları
@@ -41,14 +42,18 @@ class Question {
 
             this.r = 50;
             let d = dist(mouseX, mouseY, this.locations[0][y], this.locations[1][y]);
+
             if (d < this.r) { 
+
                 if (this.trueBaloons[questionCounter][y]==1) {
                     questionCounter++;
                     scorea++;
                 }
-             
+     
+
 
             }
+ 
         }
     }
 }
