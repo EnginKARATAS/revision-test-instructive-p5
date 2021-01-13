@@ -7,7 +7,6 @@ class Question {
         this.trueBaloons = trueBaloons;
         this.baloonsLenght = baloonsLenght;
         this.sin = 0;
-        this.container = true
     }
     show() {
         for (let a = 0; a < this.baloonsLenght; a++) {//sorunun balonları
@@ -16,6 +15,7 @@ class Question {
             squareColor.setAlpha(128 + 44 * sin(millis() / 800));
             fill(squareColor);
             ellipse(this.locations[0][a] + 40, this.locations[1][a] - 8, 200, 100)
+           
             fill(0)
             textSize(25)
             text(this.baloons[a], this.locations[0][a], this.locations[1][a])
@@ -42,18 +42,16 @@ class Question {
 
             this.r = 50;
             let d = dist(mouseX, mouseY, this.locations[0][y], this.locations[1][y]);
-
             if (d < this.r) { 
-
                 if (this.trueBaloons[questionCounter][y]==1) {
                     questionCounter++;
                     scorea++;
                 }
-     
-
+                else 
+                    this.red = true
+             
 
             }
- 
         }
     }
 }
