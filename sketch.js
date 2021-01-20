@@ -14,18 +14,26 @@ let numberOfQuestion = 2;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  
-  questionPool = [
-    ["Jul: Did ___ see me ? Dan: No I ___"],
-    ["Dan: What is __ name ? Jul: ___ name is Merve"],
-    ["What time ___ ?"],
-    ["Are you able __ call me ?"]]
+  //["Jul: Did ___ see me ? Dan: No I ___"], ["it/do", "do/it", "you/didn`t"], [100, 100, 100], [0, 1, 0],
+
+    questionPool = [
+      ["Jul: Did ___ see me ? Dan: No I ___"],
+      ["Dan: What is __ name ? Jul: ___ name is Merve"],
+      ["What time ___ ?"],
+      ["Are you able __ call me ?"]
+    ]
 
   baloonPool = [
-    ["it/do","do/it","you/didn`t"],
+    ["it/do", "do/it", "you/didn`t"],
     ["like/our", "your/my", "do/was"],
     ["is it", "she/it", "they"],
     ["can`t", "do", "to"]]
+
+  locationPool = [
+    [250, 550, 850],
+    [100, 100, 100],
+    [250, 550, 850],
+    [100, 100, 100]]
 
 
   trueBaloons = [
@@ -34,11 +42,7 @@ function setup() {
     [1, 0, 0],
     [0, 0, 1]]
 
-  locationPool = [
-    [250, 550, 850],
-    [100, 100, 100],
-    [250, 550, 850],
-    [100, 100, 100]]
+
 
   //QUESTİONS INITALİZE
   for (let i = 0; i < questionPool.length; i++) {
