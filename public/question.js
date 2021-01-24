@@ -47,10 +47,11 @@ class Question {
                     questionCounter++;
                     scorea++;
                 }
-                else 
+                else
+                {
                     this.red = true
+                }
              
-
             }
         }
     }

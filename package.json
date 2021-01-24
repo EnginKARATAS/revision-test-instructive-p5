@@ -1,0 +1,22 @@
+{
+  "name": "revision-test-instructive-p5",
+  "version": "1.0.0",
+  "description": "a simple describer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnginKARATAS/revision-test-instructive-p5.git"
+  },
+  "author": "engin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EnginKARATAS/revision-test-instructive-p5/issues"
+  },
+  "homepage": "https://github.com/EnginKARATAS/revision-test-instructive-p5#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
