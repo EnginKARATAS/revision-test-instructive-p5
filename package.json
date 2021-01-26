@@ -18,6 +18,7 @@
   "homepage": "https://github.com/EnginKARATAS/revision-test-instructive-p5#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^3.6.3"
+    "mongodb": "^3.6.3",
+    "njs": "0.0.2"
   }
 }
