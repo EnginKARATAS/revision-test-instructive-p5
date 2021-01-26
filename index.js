@@ -5,10 +5,6 @@ const app = express(); //listining right now
 app.listen(3000, () => console.log("listening at 3000")); //3000 de dinleyeceğim
 app.use(express.static('public'));//kullanıcı tarafından erişilebilecek dosya 'public'dir.
 app.use(express.json({ limit: "1mb" }));//server allows json and taken data size max 1mb, If this row not exist it will be undifined for request parameter
-//---2.3--- post data and recive data
-// app.get('/index.html', (req, res) => {
-//   res.send('Hello World!')
-// })
 
 //db
 const connectionString = 'mongodb+srv://sonaovski:Exo-craft01@cluster0.141km.mongodb.net/revision?retryWrites=true&w=majority';
@@ -16,6 +12,8 @@ const MongoClient = require('mongodb').MongoClient
 //**************************************************************** */
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then(client => {
+app.set('view engine', 'ejs')//# default view engine to dynamic data imp.
+
     console.log('Connected to Database')
     const db = client.db('star-wars-quotes')
     const quotesCollection = db.collection('quotes')
@@ -26,11 +24,9 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
 
     app.get('/', (req, res) => {
       db.collection('quotes').find().toArray()
-        .then(results => {
-          console.log(results)
-        })
-        .catch(error => console.error(error))
-      // ...
+        .then(/* ... */)
+        .catch(/* ... */)
+      res.render('index.ejs', {})
     })
 
   })
