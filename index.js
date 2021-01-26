@@ -20,20 +20,29 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     const db = client.db('star-wars-quotes')
     const quotesCollection = db.collection('quotes')
 
+    app.post('/api', (req, res) => {
+      quotesCollection.insertOne(req.body)
+    })
 
- 
-    quotesCollection.insertOne({"hello":222});
+    app.get('/', (req, res) => {
+      db.collection('quotes').find().toArray()
+        .then(results => {
+          console.log(results)
+        })
+        .catch(error => console.error(error))
+      // ...
+    })
 
-  app.post('/addquestion', (request, response) => {
-    console.log("request geldi");
-    quotesCollection.insertOne()
-  });
-  
-  app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'index.html')
   })
-  
-})
 //**************************************************************** */
 
- 
+    // app.get('/', (req, res) => {
+    //   res.sendFile(__dirname +'\\public' +'\\indexs.html')
+
+    //   db.collection('quotes').find().toArray()
+    //   .then(result => {
+    //     console.log(result);
+    //   })
+    //   .catch(error => {console.log(error)});
+    //   // res.sendFile(__dirname + 'index.html')
+    // })
