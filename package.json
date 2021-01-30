@@ -19,6 +19,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
-    "njs": "0.0.2"
-  }
+    "njs": "0.0.2",
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {}
 }

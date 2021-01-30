@@ -12,22 +12,28 @@ const MongoClient = require('mongodb').MongoClient
 //**************************************************************** */
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then(client => {
-app.set('view engine', 'ejs')//# default view engine to dynamic data imp.
 
     console.log('Connected to Database')
     const db = client.db('star-wars-quotes')
     const quotesCollection = db.collection('quotes')
 
+    app.set("view engine", "pug");
+    app.set("views", path.join(__dirname, "views"));
+
     app.post('/api', (req, res) => {
       quotesCollection.insertOne(req.body)
     })
 
-    app.get('/', (req, res) => {
+    app.get('/sa', (req, res) => {
       db.collection('quotes').find().toArray()
         .then(/* ... */)
         .catch(/* ... */)
       res.render('index.ejs', {})
     })
+  })
+  
+  app.get('/', (req, res) => {
+    res.render('index', {})
 
   })
 //**************************************************************** */
