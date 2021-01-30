@@ -63,7 +63,7 @@
         let Baloonpooldatlenght = baloonPool.length;
         let trueBaloons = [0, 0, 0];
         function addToArray() {
-            trueBaloons
+ 
             var checkbox1 = document.getElementById("cb1")
             var checkbox2 = document.getElementById("cb2")
             var checkbox3 = document.getElementById("cb3")
@@ -74,7 +74,7 @@
                     break;
                 case false:
                     console.log("false check");
-                    trueBaloons[0] = 1
+                    trueBaloons[0] = 0
                     break;
                 default:
                     break;
@@ -82,11 +82,11 @@
             switch (checkbox2.checked) {
                 case true:
                     console.log("true check");
-                    trueBaloons[0] = 1
+                    trueBaloons[1] = 1
                     break;
                 case false:
                     console.log("false check");
-                    trueBaloons[0] = 1
+                    trueBaloons[1] = 0
                     break;
                 default:
                     break;
@@ -94,11 +94,11 @@
             switch (checkbox3.checked) {
                 case true:
                     console.log("true check");
-                    trueBaloons[0] = 1
+                    trueBaloons[2] = 1
                     break;
                 case false:
                     console.log("false check");
-                    trueBaloons[0] = 1
+                    trueBaloons[2] = 0
                     break;
                 default:
                     break;

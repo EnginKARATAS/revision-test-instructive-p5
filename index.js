@@ -21,7 +21,8 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     const quotesCollection = db.collection('quotes')
 
     app.post('/api', (req, res) => {
-      quotesCollection.insertOne(req.body)
+      console.log("api geldi");
+      quotesCollection.insertOne(req.body).catch(err => {console.log(err);})
     })
 
     app.get('/products',(req,res)=>{

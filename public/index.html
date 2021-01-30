@@ -11,50 +11,48 @@
 
 <body>
 
-
   <script>
-    let len;
     let questions = [];
 
     let locationPool = [
-        [250, 550, 850],
-        [250, 550, 850],
-        [250, 550, 850],
-        [250, 550, 850]]
+      [250, 550, 850],
+      [250, 550, 850],
+      [250, 550, 850],
+      [250, 550, 850]]
 
     let scorea = 0;
     let squareColor;
     let baloons = [];
     let baloonPool = [];
 
-    let angle1 = 0;
+    let angela = 0;
     let scalar = 100; //baloons directon and size
 
     let questionCounter = 0;
 
     let numberOfQuestion = 2;
+    var lens = 0;
 
     function setup() {
+
       createCanvas(windowWidth, windowHeight);
       $.ajax({
-      url: '/products',
-      contentType: 'application/json',
-      success: function (response) {
-        len = response.length;
-        console.log(response[0]);
-        // //QUESTİONS 
-        questions.push(new Question(
-          response[0].questionPool,
-          response[0].baloonPool,
-          locationPool,
-          response[0].Baloonpooldatlenght,
-          response[0].trueBaloons
-        ));
-        console.log(questions[0]);
-
-
-      }
-    })
+        url: '/products',
+        contentType: 'application/json',
+        success: function (response) {
+          lens = response.length
+          // //QUESTİONS 
+          for (let i = 0; i <= response.length - 1; i++) {
+            questions.push(new Question(
+              response[i].questionPool,
+              response[i].baloonPool,
+              locationPool,
+              3,
+              response[i].trueBaloons
+            ));
+          }
+         }
+      })
 
       // questionPool = [
       //   ["Jul: Did ___ see me ? Dan: No I ___"],
@@ -92,7 +90,7 @@
 
     function draw() {
       background(200, 255, 255, 50)
-      for (let a = 0; a < questions.length; a++) {
+      for (let a = 0; a < questions.length ; a++) {
         questions[questionCounter].show();
         questions[questionCounter].update();
       }
